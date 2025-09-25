@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name ="viewport" content="width=device-width, intial-scale=1.0">
     <title>Code Editor - Jeph Linn</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -26,8 +27,73 @@
     <main>
         <aside class="card panel stack">
             <h2>Task / Assignment</h2>
+
+            <textarea id="assignment" class="text" placeholder="Write the task description here..."></textarea>
+
+            <div class="stack">
+                <label for="testArea">Validation Tests (JavaScript Only - optional)</label>
+                <textarea id="testArea" class="text" placeholder="Write simple tests to append after the students' code to check the solution."></textarea>
+            </div>
+
+            <div class="muted">
+              Tip: <span class="kbd">Ctrl</span> + <span class="kbd">S</span> to Save,
+              <span class="kbd">Ctrl</span> + <span class="kbd">Enter</span> to Run.
+            </div>
+        </aside>
+
+        <section class="stack" id="web-only">
+           <div id="wedEditors" class="stack panel card">
+                <div class="row">
+                    <h2>HTML / CSS / JavaScript</h2>
+                    <div class ="row">
+                        <button class="btn ok" id ="runWeb">Run</button>
+                        <button class="btn secondary" id="openPreview">Open preview in new window</button>
+                    </div>
+                </div>
+
+                <div class="tabs" id="webTabs" role="tablist" aria-label="web editors">
+                    <button class="tab active" role="tab" aria-selected="true" aria-controls="htmlPanel" data-pane="HTML" tabindex="0">HTML</button>
+                    <button class="tab" role="tab" aria-selected="false" aria-controls="cssPanel" data-pane="CSS" tabindex="-1">CSS</button>
+                    <button class="tab" role="tab" aria-selected="false" aria-controls="jsPanel" data-pane="JavaScript" tabindex="-1">JavaScript</button>
+                </div>
+
+                <div class="editor-wrap" data-pane="HTML">
+                    <div id="ed-html" class="editor"></div>
+                </div>
+
+                <div class="editor-wrap" data-pane="CSS" hidden>
+                    <div id="ed-css" class="editor"></div>
+                </div>
+
+                <div class="editor-wrap" data-pane="JavaScript" hidden>
+                    <div id="ed-js" class="editor"></div>
+                </div>
+
+                <div class="stack">
+                    <h3>Preview</h3>
+                    <iframe id="preview" class="preview" sandbox="allow-scripts allow-modals allow-same-origin allow-forms"></iframe>
+                </div>
+                    
+           </div>
+
+        </section>
+
+        <aside class="card panel stack">
+            <h2>Output</h2>
+            <div id="output" class="out" aria-live="polite"></div>
+            <div class="row">
+                <button class="btn warn" id="runTests">Run with tests</button>
+                <button class="btn secondary">Clear Output</button>
+            </div>
+            <h3>Notes</h3>
+            <ul class="muted">
+               <li>Everything runs inside the browser in a sandbox.</li>
+                <li>You can save the work as a JSON file and restore it...</li> 
+            </ul>
         </aside>
     </main>
+
     
+   <script src="script.js"></script>
 </body>
 </html>
