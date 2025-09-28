@@ -32,3 +32,25 @@ function clearOut() {
 }
 
 $('#clearOut')?.addEventListener('click', clearOut);
+
+function makeEdtitor(id, mode) {
+
+    const ed = ace.edit(id, {
+        theme: 'ace/theme/monokai',
+        fontSize: 16,
+        mode, tabsize: 2, 
+        useSoftTabs: true, 
+        showPrintMargin: false,
+        wrap: true
+    });
+
+    ed.session.setUseWrapMode(true);
+
+    ed.commands.addComands({
+        name: 'runCode',
+        bindKey: {win: 'Ctrl-Enter', mac: 'Command-Enter'},
+        exec(){runWeb(false);}
+    });
+
+    
+}
