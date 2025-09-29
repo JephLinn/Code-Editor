@@ -42,7 +42,7 @@
         </aside>
 
         <section class="stack" id="web-only">
-           <div id="wedEditors" class="stack panel card">
+           <div id="webEditors" class="stack panel card">
                 <div class="row">
                     <h2>HTML / CSS / JavaScript</h2>
                     <div class ="row">
@@ -52,26 +52,26 @@
                 </div>
 
                 <div class="tabs" id="webTabs" role="tablist" aria-label="web editors">
-                    <button class="tab active" role="tab" aria-selected="true" aria-controls="htmlPanel" data-pane="HTML" tabindex="0">HTML</button>
-                    <button class="tab" role="tab" aria-selected="false" aria-controls="cssPanel" data-pane="CSS" tabindex="-1">CSS</button>
-                    <button class="tab" role="tab" aria-selected="false" aria-controls="jsPanel" data-pane="JavaScript" tabindex="-1">JavaScript</button>
+                    <button class="tab active" role="tab" aria-selected="true" data-pane="html" tabindex="0">HTML</button>
+                    <button class="tab" role="tab" aria-selected="false" data-pane="css" tabindex="-1">CSS</button>
+                    <button class="tab" role="tab" aria-selected="false" data-pane="js" tabindex="-1">JavaScript</button>
                 </div>
 
-                <div class="editor-wrap" data-pane="HTML">
-                    <div id="ed-html" class="editor"></div>
+                <div class="editor-wrap" data-pane="html">
+                    <div id="ed_html" class="editor"></div>
                 </div>
 
-                <div class="editor-wrap" data-pane="CSS" hidden>
-                    <div id="ed-css" class="editor"></div>
+                <div class="editor-wrap" data-pane="css" hidden>
+                    <div id="ed_css" class="editor"></div>
                 </div>
 
-                <div class="editor-wrap" data-pane="JavaScript" hidden>
-                    <div id="ed-js" class="editor"></div>
+                <div class="editor-wrap" data-pane="js" hidden>
+                    <div id="ed_js" class="editor"></div>
                 </div>
 
                 <div class="stack">
                     <h3>Preview</h3>
-                    <iframe id="preview" class="preview" sandbox="allow-scripts allow-modals allow-same-origin allow-forms"></iframe>
+                    <iframe id="preview" class="preview" sandbox="allow-scripts allow-modals allow-same-origin"></iframe>
                 </div>
                     
            </div>
@@ -94,6 +94,9 @@
     </main>
 
     <div class="footer">Made by JephLinn</div>
-   <script src="script.js"></script>
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.43.2/ace.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
